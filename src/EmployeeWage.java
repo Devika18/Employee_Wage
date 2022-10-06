@@ -8,20 +8,21 @@ public class EmployeeWage {
         int fullTime = 8;
         int partTime = 4;
         int workingDays = 20;
+        int workingHours = 100;
         int salary;
         int totalSalary = 0;
         Random random = new Random();
         int employeeCheck = random.nextInt(3);
-        for (int day = 0; day <= workingDays; day++) {
+        for (int hour = 0; hour <= workingHours; hour++) {
             if (employeeCheck == 2) {
                 System.out.println("Employee is Present for Full Time");
-                salary = wagePerHour * fullTime;
+                salary = wagePerHour * fullTime * workingDays;
                 totalSalary = totalSalary + salary;
                 System.out.println("Monthly salary is: "+totalSalary);
             }
             else if (employeeCheck == 1) {
                 System.out.println("Employee is Present for Part Time");
-                salary = wagePerHour * partTime;
+                salary = wagePerHour * partTime * workingDays;
                 totalSalary = totalSalary + salary;
                 System.out.println("Monthly salary is: "+totalSalary);
             } else
